@@ -2,13 +2,21 @@
 
 <h1>Friends</h1>
 
-<div id="friends">
-  <% @friends.each do |friend| %>
-    <%= render friend %>
-    <p>
-      <%= link_to "Show this friend", friend %>
-    </p>
-  <% end %>
-</div>
+<table class="table table-bordered">
+    <thead  class="table-dark">
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Twitter</th>
+        <th></th>
+      </tr>
+    </thead>
+  <div id="friends">
+    <% @friends.each do |friend| %>
+      <%= render friend %>
+    <% end %>
+</table>
 
 <%= link_to "New friend", new_friend_path %>

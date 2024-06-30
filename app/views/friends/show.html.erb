@@ -1,6 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @friend %>
+<table class="table table-bordered">
+    <thead  class="table-dark">
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Twitter</th>
+        <th></th>
+      </tr>
+    </thead>
+  <div>
+      <%= render @friend %>
+</table>
 
 <div>
   <%= link_to "Edit this friend", edit_friend_path(@friend) %> |
