@@ -10,13 +10,18 @@
         <th>Email</th>
         <th>Phone</th>
         <th>Twitter</th>
+        <th>User ID</th>
+        <th></th>
         <th></th>
       </tr>
     </thead>
   <div id="friends">
     <% @friends.each do |friend| %>
-      <%= render friend %>
+      <% if current_user == friend.user %>
+        <%= render friend %>
+      <% end %>
     <% end %>
 </table>
-
-<%= link_to "New friend", new_friend_path %>
+<% if user_signed_in? %>
+  <%= link_to "New friend", new_friend_path %>
+<% end %>

@@ -6,7 +6,10 @@
           <td><%= friend.email %></td>
           <td><%= friend.phone %></td>
           <td><%= friend.twitter %></td>
-          <td><%= link_to "Show this friend", friend %></td>
+
+          <td><%= friend.user_id %></td>
+          <td><%= link_to "Show", friend %></td>
+          <td><%= link_to "Destroy", friend, data: { turbo_method: :delete }%></td>
         </tr>
     </tbody>
 </div>

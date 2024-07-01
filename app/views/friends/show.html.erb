@@ -8,6 +8,8 @@
         <th>Email</th>
         <th>Phone</th>
         <th>Twitter</th>
+        <th>User ID</th>
+        <th></th>
         <th></th>
       </tr>
     </thead>
@@ -16,8 +18,12 @@
 </table>
 
 <div>
-  <%= link_to "Edit this friend", edit_friend_path(@friend) %> |
-  <%= link_to "Back to friends", friends_path %>
+  <% if user_signed_in? %>
+    <%= link_to "Edit this friend", edit_friend_path(@friend) %> | 
+    <%= link_to "Back to friends", friends_path %>
 
-  <%= button_to "Destroy this friend", @friend, method: :delete %>
+    <%= button_to "Destroy this friend", @friend, method: :delete %>
+  <% else %>
+    <%= link_to "Back to friends", friends_path %>
+  <% end %> 
 </div>
